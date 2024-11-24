@@ -13,6 +13,7 @@ class UserTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14.0)
         label.textAlignment = .center
+        label.textColor = .black
         label.frame = contentView.bounds
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -27,15 +28,13 @@ class UserTableViewCell: UITableViewCell {
         setupUX()
     }
     
-    
     func setupUX() {
         contentView.backgroundColor = .white
         contentView.addSubview(labelName)
-        labelName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
+        labelName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
         labelName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
         labelName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
     }
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

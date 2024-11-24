@@ -15,6 +15,7 @@ class UserListViewController: UIViewController {
         table.frame = view.bounds
         table.dataSource = self
         table.delegate = self
+        table.rowHeight = 80
         table.register(UserTableViewCell.self, forCellReuseIdentifier: "UserTableViewCell")
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
@@ -80,7 +81,7 @@ extension UserListViewController: UITableViewDataSource, UITableViewDelegate {
                 fatalError("Could not dequeue cell with identifier: UserTableViewCell")
             }
         let user = viewModel.user(at: indexPath.row)
-        cell.textLabel?.text = user.name
+        cell.labelName.text = user.name
         return cell
     }
 
